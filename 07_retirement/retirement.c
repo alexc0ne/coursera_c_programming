@@ -2,13 +2,17 @@
 #include <stdlib.h>
 
 
+
+
 struct _retire_info
 {
     int months;
     double contribution;
     double rate_of_return;   
-}
+};
 typedef struct _retire_info retire_info;
+
+
 
 
 void retirement (int startAge,   //in months
@@ -20,9 +24,24 @@ void retirement (int startAge,   //in months
 }
 
 
+
+
 int main()
 {
-    //todo
+    int startAge = 327;
+    double initial = 21345;
+
+    retire_info working;
+    working.month = 489;
+    working.contribution = 1000;
+    working.rate_of_return = 0.045/12;
+
+    retire_info retired;
+    retired.month = 384;
+    retired.contribution = -4000;
+    retired.rate_of_return = 0.01/12;
+    retirement(startAge, initial, working, retired);
+
     return EXIT_SUCCESS;
 }
 
@@ -77,6 +96,7 @@ int main()
     think about how you can abstract that part out into a function,
     and re-use it, rather than re-writing it]  
 
+
  4. Write a main function which computes the retirement assuming
      Working:
      --------
@@ -88,4 +108,16 @@ int main()
     --------
       Months: 384
       Per Month Spending: -4000
+      Rate of Return: 1% per year ( 0.01/12 per month) 
+                      [above inflation]
+    Starting conditions:
+    -------------------
+       Age: 327 months (27 years, 3 months)
+       Savings: $21,345
+  5. Compile your code (we provided a Makefile) and test
+     it (we provided the output: retirement_ans.txt).
+
+  6. Submit retirement.c
+
+
 */
