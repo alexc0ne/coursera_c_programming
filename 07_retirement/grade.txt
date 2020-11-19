@@ -1,0 +1,14 @@
+Grading at Thu Nov 19 09:38:11 UTC 2020
+Attempting to compile retirement.c
+retirement.c:11:9: error: expected ‘;’, identifier or ‘(’ before ‘struct’
+ typedef struct _retire_info retire_info;
+         ^
+retirement.c:16:18: error: expected declaration specifiers or ‘...’ before ‘retire_info’
+                  retire_info working, //info about working
+                  ^
+retirement.c:17:18: error: expected declaration specifiers or ‘...’ before ‘retire_info’
+                  retire_info retired) //info about being retired
+                  ^
+The code did not compile!
+
+Overall Grade: F
