@@ -13,6 +13,16 @@ struct _retire_info
 typedef struct _retire_info retire_info;
 
 
+void print_information(int * startAge, double * total, retire_info ri)
+{
+    ++*startAge;
+    int age_in_years = *startAge / 12;
+    int rest_in_months = *startAge % 12;
+        
+    *total += ri.contribution + *total * ri.rate_of_return;
+
+    printf("Age %3d month %2d you have $%.2lf\n", age_in_years, rest_in_months, *total);
+}
 
 
 void retirement (int startAge,   //in months
@@ -20,7 +30,16 @@ void retirement (int startAge,   //in months
                  retire_info working, //info about working
                  retire_info retired) //info about being retired
 {
-    //todo
+    
+    int age_in_years = startAge / 12;
+    int rest_in_months = startAge % 12;
+    double total = initial;
+    printf("Age %3d month %2d you have $%.2lf\n", age_in_years, rest_in_months, total);
+    for (int i = 0; i < working.months; ++i)
+        print_information(&startAge, &total, working);
+
+    for (int i = 0; i + 1 < retired.months; ++i)
+        print_information(&startAge, &total, retired);
 }
 
 
@@ -32,12 +51,12 @@ int main()
     double initial = 21345;
 
     retire_info working;
-    working.month = 489;
+    working.months = 489;
     working.contribution = 1000;
     working.rate_of_return = 0.045/12;
 
     retire_info retired;
-    retired.month = 384;
+    retired.months = 384;
     retired.contribution = -4000;
     retired.rate_of_return = 0.01/12;
     retirement(startAge, initial, working, retired);
