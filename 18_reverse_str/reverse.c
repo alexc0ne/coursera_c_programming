@@ -11,20 +11,28 @@ void swap_char (char * a, char * b)
 }
 
 
-void reverse(char * str)
+size_t strlen (const char * str)
 {
-    size_t size = 0;
-    char * ptr = str;
-      
-    while (*ptr != '\0')
+    size_t len = 0;
+    while(*str != '\0')
     {
-        ++size;
-        ++ptr;
+        ++str;
+        ++len;
     }
+    return len;
+}
+
+
+void reverse (char * str)
+{
+    if (str == NULL) return;
+    
+    size_t len = strlen(str);
+    char * ptr = str;
    
-    ptr = str; // begin
-    char * right = ptr + size - 1;
-    for (int i = 0; i < size / 2; ++i)
+    ptr = str;                           // begin
+    char * right = ptr + len - 1;        // end - 1
+    for (size_t i = 0; i < len / 2; ++i)
     {
         swap_char(ptr, right);
         ++ptr;
