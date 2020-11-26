@@ -1,8 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int * arrayMax(int * array, int n) {
-  return NULL;
+int * arrayMax(int * arr, int n)
+{
+    if (n <= 0)
+        return NULL;
+    
+    int * current = arr;
+    int * end = arr + n;
+
+    int max_element = *arr;
+    int * ptr_max_element = current;
+
+    while (current != end)
+    {
+        if (*current > max_element)
+        {
+            max_element = *current;
+            ptr_max_element = current;
+        }
+        ++current;
+    } 
+
+    return ptr_max_element;
 }
 
 void doTest(int * array, int n) {
