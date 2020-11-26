@@ -2,9 +2,36 @@
 #include <stdlib.h>
 #include <string.h>
 
-void reverse(char * str) {
-  //WRITE ME!
+
+void swap_char (char * a, char * b)
+{
+    char tmp = *a;
+    *a = *b;
+    *b = tmp;
 }
+
+
+void reverse(char * str)
+{
+    size_t size = 0;
+    char * ptr = str;
+    
+    while (*ptr != '\0')
+    {
+        ++size;
+        ++ptr;
+    }
+   
+    ptr = str; // begin
+    char * right = ptr + size - 1;
+    while (right - ptr > 0)
+    {
+        swap_char(ptr, right);
+        ++ptr;
+        --right;
+    }
+}
+
 
 int main(void) {
   char str0[] = "";
