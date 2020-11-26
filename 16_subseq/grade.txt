@@ -1,7 +1,17 @@
-Grading at Thu Nov 26 11:45:27 UTC 2020
+Grading at Thu Nov 26 11:46:17 UTC 2020
 Attempting to compile maxSeq.c 
-maxSeq.c:2:20: fatal error: maxSeq.h: No such file or directory
-compilation terminated.
-The code did not compile!
+Linking your object file with our test main
+#################################################
+testcase2:
+array size:0 was Correct
+#################################################
+testcase3:
+array size:1 was Correct
+#################################################
+testcase4:
+array size:100 was Correct
+#################################################
+testcase5:
+array size:5000 was Correct
 
-Overall Grade: F
+Overall Grade: A
