@@ -15,7 +15,7 @@ void reverse(char * str)
 {
     size_t size = 0;
     char * ptr = str;
-    
+      
     while (*ptr != '\0')
     {
         ++size;
@@ -24,7 +24,7 @@ void reverse(char * str)
    
     ptr = str; // begin
     char * right = ptr + size - 1;
-    while (right - ptr > 0)
+    for (int i = 0; i < size / 2; ++i)
     {
         swap_char(ptr, right);
         ++ptr;
