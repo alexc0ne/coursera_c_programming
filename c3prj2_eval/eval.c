@@ -424,6 +424,14 @@ hand_eval_t build_hand_from_match(deck_t * hand, unsigned n, hand_ranking_t what
     size_t len = hand->n_cards;
     card_t ** arr = hand->cards;
 
+    if (what == NOTHING)
+    {
+        for (int i = 0; i < 5; ++i)
+            ans.cards[i] = arr[i];
+
+        return ans;
+    }
+
     for (int i = 0; i < n; ++i)
         ans.cards[i] = arr[idx + i];
 
