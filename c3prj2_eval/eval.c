@@ -42,7 +42,7 @@ int card_ptr_comp(const void * vp1, const void * vp2)
     if (p1->value == p2->value)
     {
         if (p1->suit == p2->suit) return 0;
-        else if (p1->suit < p2->suit) return -1;
+        else if (p1->suit < p2->suit) return 1;
     }
 
     return -1; 
